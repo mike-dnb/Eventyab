@@ -1,0 +1,11 @@
+eventyab_home:
+    resource: "@EventyabHomeBundle/Resources/config/routing.yml"
+    prefix:   /
+
+eventyab_events:
+    resource: "@EventyabEventsBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation

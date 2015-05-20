@@ -1,0 +1,4 @@
+services:
+#    eventyab_home.example:
+#        class: Eventyab\HomeBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

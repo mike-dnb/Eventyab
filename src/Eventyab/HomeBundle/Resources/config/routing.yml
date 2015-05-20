@@ -1,0 +1,3 @@
+eventyab_home_homepage:
+    path:     /home
+    defaults: { _controller: EventyabHomeBundle:Default:index }
