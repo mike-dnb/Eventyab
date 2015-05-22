@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Stylish Portfolio - Start Bootstrap Theme</title>
+    <title>Eventyab</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo $view['assets']->getUrl('css/bootstrap.min.css') ?>" rel="stylesheet">
@@ -44,10 +44,16 @@
                 <a href="#top" onclick = $("#menu-close").click(); >Home</a>
             </li>
             <li>
-                <a href="#services" onclick = $("#menu-close").click(); >Events</a>
+                <a href="#popular" onclick = $("#menu-close").click(); >Popular Events</a>
+            </li>
+            <li>
+                <a href="#events" onclick = $("#menu-close").click(); >Event Filtering</a>
             </li>
             <li>
                 <a href="#about" onclick = $("#menu-close").click(); >About Us</a>
+            </li>
+            <li>
+                <a href="#team" onclick = $("#menu-close").click(); >Our Team</a>
             </li>
             <li>
                 <a href="#contact" onclick = $("#menu-close").click(); >Contact Us</a>
@@ -60,124 +66,33 @@
         <div class="text-vertical-center">
             <h1>Eventyab</h1>
             <h3>Find events happening all around the world</h3>
-            <form class="form-inline">
+            <?php echo $view['form']->start($form, array(
+    				'attr' => array('class' => 'form-inline')
+			)) ?>
 			  <div class="form-group">
-			    <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
 			    <?php echo $view['form']->row($form['name']); ?>
 			  </div>
 			  <div class="form-group">
-			    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com">
+			    <?php echo $view['form']->row($form['country']); ?>
 			  </div>
-			  <button type="submit" class="btn btn-default">Send invitation</button>
-			</form>
-            <br>
-            
-            <?php echo $view['form']->start($form, array(
-    				'attr' => array('class' => 'form-inline'),
-			)) ?>
-			<?php echo $view['form']->widget($form) ?>
+			  <div class="form-group">
+			    <?php echo $view['form']->row($form['date']); ?>
+			  </div>
+			  <div class="form-group">
+			  	<?php echo $view['form']->row($form['search']); ?>
+		  	  </div>
 			<?php echo $view['form']->end($form) ?>
+            <br>
+			<?php echo $view['form']->widget($form) ?>
         </div>
     </header>
-
-    <!-- About -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>Stylish Portfolio is the perfect theme for your next project!</h2>
-                    <p class="lead">This theme features some wonderful photography courtesy of <a target="_blank" href="http://join.deathtothestockphoto.com/">Death to the Stock Photo</a>.</p>
-                </div>
-            </div>
-            <!-- /.row -->
-        </div>
-        <!-- /.container -->
-    </section>
-
-    <!-- Services -->
-    <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
-    <section id="services" class="services bg-primary">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-lg-10 col-lg-offset-1">
-                    <h2>Our Services</h2>
-                    <hr class="small">
-                    <div class="row">
-                        <div class="col-md-3 col-sm-6">
-                            <div class="service-item">
-                                <span class="fa-stack fa-4x">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-cloud fa-stack-1x text-primary"></i>
-                            </span>
-                                <h4>
-                                    <strong>Service Name</strong>
-                                </h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                <a href="#" class="btn btn-light">Learn More</a>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="service-item">
-                                <span class="fa-stack fa-4x">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-compass fa-stack-1x text-primary"></i>
-                            </span>
-                                <h4>
-                                    <strong>Service Name</strong>
-                                </h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                <a href="#" class="btn btn-light">Learn More</a>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="service-item">
-                                <span class="fa-stack fa-4x">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-flask fa-stack-1x text-primary"></i>
-                            </span>
-                                <h4>
-                                    <strong>Service Name</strong>
-                                </h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                <a href="#" class="btn btn-light">Learn More</a>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="service-item">
-                                <span class="fa-stack fa-4x">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-shield fa-stack-1x text-primary"></i>
-                            </span>
-                                <h4>
-                                    <strong>Service Name</strong>
-                                </h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                <a href="#" class="btn btn-light">Learn More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.row (nested) -->
-                </div>
-                <!-- /.col-lg-10 -->
-            </div>
-            <!-- /.row -->
-        </div>
-        <!-- /.container -->
-    </section>
-
-    <!-- Callout -->
-    <aside class="callout">
-        <div class="text-vertical-center">
-            <h1>Vertically Centered Text</h1>
-        </div>
-    </aside>
-
-    <!-- Portfolio -->
-    <section id="portfolio" class="portfolio">
+    
+    <!-- Popular Events -->
+    <section id="popular" class="portfolio">
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 text-center">
-                    <h2>Our Work</h2>
+                    <h2>The most popular events</h2>
                     <hr class="small">
                     <div class="row">
                         <div class="col-md-6">
@@ -218,22 +133,13 @@
         </div>
         <!-- /.container -->
     </section>
-
-    <!-- Call to Action -->
-    <aside class="call-to-action bg-primary">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h3>The buttons below are impossible to resist.</h3>
-                    <a href="#" class="btn btn-lg btn-light">Click Me!</a>
-                    <a href="#" class="btn btn-lg btn-dark">Look at Me!</a>
-                </div>
-            </div>
-        </div>
-    </aside>
-
+    
     <!-- Map -->
-    <section id="contact" class="map">
+    <section id="events" class="map">
+    <ul class="nav nav-pills nav-justified">
+		<li class="active"><a href="#">Map View</a></li>
+		<li><a href="#">Calendar View</a></li>
+	</ul>
         <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
         <br />
         <small>
@@ -242,12 +148,145 @@
         </iframe>
     </section>
 
+    <!-- About -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Started with nothing! Will achieve everything!</h2>
+                    <p class="lead">
+						با توجه به رشد روزافزون ایرانیان ساکن کانادا و تنوع و گستردگی گروه های ایرانی و برنامه های مرتبط با آن ها، همواره نیاز به یک وب سایت جامع که در برگیرنده ی این طیف گسترده از برنامه ها ولی به صورت طبقه بندی شده و منظم با قابلیت دسترسی آسان و سریع به جزئیات هر برنامه و نحوه ی تهیه ی بلیط آن باشد، احساس می شد. همچنین روز به روز بر تعداد مشاغل مهم و مورد نیازی که ایرانیان عهده دار آن هستند، افزوده می شود. اما متاسفانه  به دلیل خلاء موجود در عرصه اطلاع رسانی آنلاین، بسیاری از این خدمات تا کنون از چشم هموطنان عزیز دور مانده است. 
+						بدین منظور، گروه ام5 تصمیم گرفت تا وب سایتی همیشه به روز باشد و خدمات لازم را برای یک زندگی شهری شاد و سالم به ایرانیان عزیز ساکن کانادا ارائه دهد. ام5 با کوشش تیمی با چهره هایی جوان و آشنا در شهر کلگری به تدریج گسترش می‌یابد و برآن است تا به مرجع آنلاین برای معرفی رویدادها و مشاغل مورد نیاز شما ایرانیان و فارسی زبانان عزیز در سراسر کانادا تبدیل شود. 
+						این سایت به هیچ سازمان ، گروه یا تشکیلات ایرانی و یا غیر ایرانی وابستگی ندارد و به صورت مستقل در حوزه اطلاع رسانی آنلاین برای هموطنان ساکن کانادا فعالیت می نماید.
+					</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+
+    <!-- Team -->
+    <section id="team" class="services bg-primary">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-12">
+                    <h2>Our Team</h2>
+                    <hr class="small">
+                    <div class="row">
+                        <div class="col-md-2 col-sm-6 col-md-offset-1">
+                            <div class="service-item">
+                                <img src="<?php echo $view['assets']->getUrl('img/team/ms.jpg')?>" />
+                                <h4>
+                                    <p class="our-team-name">Mohammad Soroush</p>
+                                    <strong>Co-founder & role</strong>
+                                </h4>
+                                <p class="text-left text-justify">
+	                                Mohammad received his PhD and MEng in Petroleum Engineering from the University of Calgary. 
+	                                As a highly motivated, energetic, and well-organized petroleum engineer, he has succeeded in 
+	                                several leadership and mentorship professional activities. Mohammad is co-founder of Iranian 
+	                                Graduate Student Association (IGSA). His voluntary activities have been started in IGSA as 
+	                                event manager and VP-communication and continued in many social events inside and outside the university.
+                                </p>
+                                <a href="https://www.linkedin.com" class="btn btn-light">Learn More</a>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-6">
+                            <div class="service-item">
+                            	<img src="<?php echo $view['assets']->getUrl('img/team/mr.jpg')?>" />
+                                <h4>
+                                    <p class="our-team-name">Mohammadreza Rahimi</p>
+                                    <strong>Co-founder & role</strong>
+                                </h4>
+                                <p class="text-left text-justify">
+                                	Mohammadreza received his M.Sc. in Geomatics Engineering from the University of Calgary, for developing 
+                                	location recommendation systems for social networking services. Prior to that, he received a bachelor's 
+                                	degree in Software Engineering from Sharif University of Technology in Iran. Mohammadreza is currently 
+                                	the president of Iranian Graduate Students’ Association at the University of Calgary. Serving at this 
+                                	position and as a volunteer in other positions, he has developed a large set of leadership skills which 
+                                	he aims to commercializing them at Eventyab. He is currently a PhD student at the University of Calgary 
+                                	and a web developer at Eventyab.</p>
+                                <a href="https://www.linkedin.com" class="btn btn-light">Learn More</a>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-6">
+                            <div class="service-item">
+								<img src="<?php echo $view['assets']->getUrl('img/team/ma.jpg')?>" />
+                            	<h4>
+                                    <p class="our-team-name">Mohammad Hadi Aghahassani</p>
+                                    <strong>Co-founder & role</strong>
+                                </h4>
+                                <p class="text-left text-justify">
+                                	Hadi is originally from Iran. He moved to Calgary in 2011 to obtain his Master's degree in structural 
+                                	engineering from the University of Calgary. Now he is working as a structural engineer with a consulting 
+                                	firm in Calgary, where he applies his academic background in building industry. Hadi enjoys volunteering 
+                                	for non-profit and charity organizations and loves to make new friends. He enjoys volleyball, swimming and 
+                                	spending time with his lovely wife and awesome friends.
+                                </p>
+                                <a href="https://www.linkedin.com" class="btn btn-light">Learn More</a>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-6">
+                            <div class="service-item">
+                            	<img src="<?php echo $view['assets']->getUrl('img/team/mj.jpg')?>" />
+                                <h4>
+                                    <p class="our-team-name">Mohammad Ali Jazayeri</p>
+                                    <strong>Co-founder & role</strong>
+                                </h4>
+                                <p class="text-left text-justify">
+	                                Mohammad Ali received his MSc in Geomatics Engineering from the University of Calgary, where he belongs to. 
+	                                During his Masters, Mohammad has done many voluntary activities in a spread spectrum of event advertisement 
+	                                and event organizer to presidency of a governmental association. As he's a sociable person, he loves to do 
+	                                gathering with his friends in all social events. To simplify this process, he started developing a web 
+	                                application benefiting all people across the world. Having an optimistic attitude, he believes in success for 
+	                                the future of this application.
+                                </p>
+                                <a href="https://www.linkedin.com/in/mojazayeri" class="btn btn-light">Learn More</a>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-6">
+                            <div class="service-item">
+                            	<img src="<?php echo $view['assets']->getUrl('img/team/mm.jpg')?>" />
+                                <h4>
+                                    <p class="our-team-name">Mohammad Moravvej</p>
+                                    <strong>Co-founder & role</strong>
+                                </h4>
+                                <p class="text-left text-justify">
+                          			Mohammad, so called Morooj or MHMH, loves spending time with friends and having fun activities with them, 
+                          			no matter it is a daily gathering over a coffee or a big celebration like Nowruz! Morooj met Mohammad Ali 
+                          			(Shahram), Mamrooz, and Soroush when studying his MSc at the University of Calgary, whilst already knew Hadi 
+                          			from memorable undergrad years at the Sharif University of Technology. MHMH have been doing volunteer works 
+                          			since he entered Sharif University and he has never gave up on that until now. Head of Research and Education, 
+                          			VP-Events, and VP-Treasury of different groups and organizations in Iran and in Canada are some of the examples 
+                          			of his leadership experience. Mohammad is currently pursuing his PhD at the University of Calgary and cooperates 
+                          			with Civil Engineering Graduate Society (CEGS) as the VP-Events.
+                                </p>
+                                <a href="https://www.linkedin.com" class="btn btn-light">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.row (nested) -->
+                </div>
+                <!-- /.col-lg-10 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+
+    <!-- Callout -->
+    <aside class="callout">
+        <div class="text-vertical-center">
+            <h1>Vertically Centered Text</h1>
+        </div>
+    </aside>
+
     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 text-center">
-                    <h4><strong>Eventyab</strong>
+                    <h4><strong>Get in touch</strong>
                     </h4>
                     <!-- TBD Later
                     <p>3481 Melrose Place<br>Beverly Hills, CA 90210</p>
@@ -268,9 +307,19 @@
                         <li>
                             <a href="#"><i class="fa fa-dribbble fa-fw fa-3x"></i></a>
                         </li>
+                        <li>
+                            <a href="#"><i class="fa fa-google-plus-square fa-fw fa-3x"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-linkedin fa-fw fa-3x"></i></a>
+                        </li>
                     </ul>
                     <hr class="small">
                     <p class="text-muted">Copyright &copy; Eventyab 2015</p>
+                    <p>
+    	                <a href="<?php echo $view['assets']->getUrl('Eventyab-PrivacyPolicy.pdf')?>">Terms of Use - Privacy Policy
+						</a>
+                    </p>
                 </div>
             </div>
         </div>

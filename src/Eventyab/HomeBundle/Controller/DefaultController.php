@@ -22,23 +22,32 @@ class DefaultController extends Controller
         	->add('name', 'text', array(
         			'label' => false, 'attr' => array(
         				'placeholder' =>'Event title',
+        				'class' => 'form-control',
+        				'id' => 'exampleInputName2'
         			)
         	))
         	->add('country', 'country', array(
         			'label' => false,
         			'placeholder' => 'Choose an option',
+        			'required'    => false,
+        			'attr' => array(
+        					'class' => 'form-control'
+        			)
         	))
         	->add('date', 'date', array(
         			'label' => false,
 					'widget' => 'single_text',
 					'html5' => true,
+        			'required'    => false,
         			'attr' => array (
-        					'style' => 'height: 25px;',
         					'class' => 'form-control'
         			)
         	))
         	->add('search', 'submit', array(
         			'label' => 'Search',
+        			'attr' => array (
+        					'class' => 'btn btn-primary'
+        			)
         	))
         	->getForm();
         
