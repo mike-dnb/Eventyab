@@ -16,7 +16,35 @@ class DefaultController extends Controller
         $reponse->headers->set('Content-Type', 'application/json');
         //echo $request->getLanguages()[0];
         //return $reponse;
-        return $this->render('EventyabHomeBundle:Default:index.html.php');
+
+        $form = $this->createFormBuilder()
+			->setAction($this->generateUrl('eventyab_home'))
+        	->add('name', 'text', array(
+        			'label' => false, 'attr' => array(
+        				'placeholder' =>'Event title',
+        			)
+        	))
+        	->add('country', 'country', array(
+        			'label' => false,
+        			'placeholder' => 'Choose an option',
+        	))
+        	->add('date', 'date', array(
+        			'label' => false,
+					'widget' => 'single_text',
+					'html5' => true,
+        			'attr' => array (
+        					'style' => 'height: 25px;',
+        					'class' => 'form-control'
+        			)
+        	))
+        	->add('search', 'submit', array(
+        			'label' => 'Search',
+        	))
+        	->getForm();
+        
+        return $this->render('EventyabHomeBundle:Default:index.html.php', array(
+        		'form' => $form->createView(),
+        ));
         
     }
     

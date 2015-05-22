@@ -59,9 +59,24 @@
     <header id="top" class="header">
         <div class="text-vertical-center">
             <h1>Eventyab</h1>
-            <h3>Free Event Alarm App</h3>
+            <h3>Find events happening all around the world</h3>
+            <form class="form-inline">
+			  <div class="form-group">
+			    <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
+			    <?php echo $view['form']->row($form['name']); ?>
+			  </div>
+			  <div class="form-group">
+			    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com">
+			  </div>
+			  <button type="submit" class="btn btn-default">Send invitation</button>
+			</form>
             <br>
-            <a href="#about" class="btn btn-dark btn-lg">Find Out More</a>
+            
+            <?php echo $view['form']->start($form, array(
+    				'attr' => array('class' => 'form-inline'),
+			)) ?>
+			<?php echo $view['form']->widget($form) ?>
+			<?php echo $view['form']->end($form) ?>
         </div>
     </header>
 
