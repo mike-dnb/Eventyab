@@ -26,9 +26,6 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="<?php echo $view['assets']->getUrl('js/bootstrap.min.js')?>"></script>
     
-    <!-- Custom JavaScript -->
-    <script src="<?php echo $view['assets']->getUrl('js/home.js')?>"></script>
-    
 </head>
 
 <body>
@@ -61,6 +58,12 @@
         </ul>
     </nav>
 
+    <form class="navbar-form navbar-left" role="search">
+  <img alt="Brand" src="<?php echo $view['assets']->getUrl('img/logo.png')?>" width=100 height=60/>
+  <button type="submit" class="btn btn-default">Sign In</button>
+  <button type="submit" class="btn btn-default">Sign Up</button>
+  <button type="submit" class="btn btn-default">Send Feedback</button>
+</form>
     <!-- Header -->
     <header id="top" class="header">
         <div class="text-vertical-center">
@@ -133,21 +136,40 @@
         </div>
         <!-- /.container -->
     </section>
-    
+
     <!-- Map -->
     <section id="events" class="map">
-    <ul class="nav nav-pills nav-justified">
-		<li class="active"><a href="#">Map View</a></li>
-		<li><a href="#">Calendar View</a></li>
-	</ul>
-        <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
-        <br />
-        <small>
-            <a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a>
-        </small>
-        </iframe>
+    	<div role="tabpanel">
+    	  	<!-- Nav tabs -->
+		    <ul class="nav nav-pills nav-justified" role="tablist" id="eventTab">
+		    	<li class="active" role="presentation">
+					<a href="#calendar" role="tab" aria-controls="calendar" data-toggle="pill">Calendar View</a>
+				</li>
+				<li role="presentation">
+					<a href="#map" role="tab" aria-controls="map" data-toggle="pill">Map View</a>
+				</li>
+			</ul>
+		
+			<!-- Tab panes -->
+		  	<div class="tab-content">
+		  		<div role="tabpanel" class="tab-pane fade in active" id="calendar">
+		  			...........................................
+		  		</div>
+		    	<div role="tabpanel" class="tab-pane fade" id="map">
+		    		<iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" 
+		    			src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
+				        <br />
+				        <small>
+				            <a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a>
+				        </small>
+			        </iframe>
+		    	</div>
+		  	</div>
+        </div>
     </section>
-
+    
+    <br />
+    
     <!-- About -->
     <section id="about" class="about">
         <div class="container">
@@ -155,9 +177,9 @@
                 <div class="col-lg-12 text-center">
                     <h2>Started with nothing! Will achieve everything!</h2>
                     <p class="lead">
-						با توجه به رشد روزافزون ایرانیان ساکن کانادا و تنوع و گستردگی گروه های ایرانی و برنامه های مرتبط با آن ها، همواره نیاز به یک وب سایت جامع که در برگیرنده ی این طیف گسترده از برنامه ها ولی به صورت طبقه بندی شده و منظم با قابلیت دسترسی آسان و سریع به جزئیات هر برنامه و نحوه ی تهیه ی بلیط آن باشد، احساس می شد. همچنین روز به روز بر تعداد مشاغل مهم و مورد نیازی که ایرانیان عهده دار آن هستند، افزوده می شود. اما متاسفانه  به دلیل خلاء موجود در عرصه اطلاع رسانی آنلاین، بسیاری از این خدمات تا کنون از چشم هموطنان عزیز دور مانده است. 
-						بدین منظور، گروه ام5 تصمیم گرفت تا وب سایتی همیشه به روز باشد و خدمات لازم را برای یک زندگی شهری شاد و سالم به ایرانیان عزیز ساکن کانادا ارائه دهد. ام5 با کوشش تیمی با چهره هایی جوان و آشنا در شهر کلگری به تدریج گسترش می‌یابد و برآن است تا به مرجع آنلاین برای معرفی رویدادها و مشاغل مورد نیاز شما ایرانیان و فارسی زبانان عزیز در سراسر کانادا تبدیل شود. 
-						این سایت به هیچ سازمان ، گروه یا تشکیلات ایرانی و یا غیر ایرانی وابستگی ندارد و به صورت مستقل در حوزه اطلاع رسانی آنلاین برای هموطنان ساکن کانادا فعالیت می نماید.
+						Wondering why your events never be sold-out although you pay so much on advertisement?
+						Are you bored from work and want to have some fun with your friends but don’t know where to go?
+						Our goal in EventYab is to connect people throughout the world by helping them create their own events, advertise them or invite their friends over, find fun events of their interests at their neighbourhood, buy the best tickets with the best prices, and so many more. EventYab helps you create, advertise, invite, find, and attend events, very fast, very simple.
 					</p>
                 </div>
             </div>
@@ -280,6 +302,50 @@
             <h1>Vertically Centered Text</h1>
         </div>
     </aside>
+    
+    <section id="contact">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Contact Us</h2>
+                    <h3 class="section-subheading text-muted">
+                    	Feel free to email us to provide some feedback on our website, give us suggestions, or to just say hello!
+                    </h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <form name="sentMessage" id="contactForm" novalidate>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="نام یا نام خانوادگی *" id="name" required data-validation-required-message="Please enter your name.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="آدرس ایمیل *" id="email" required data-validation-required-message="Please enter your email address.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="form-group">
+                                    <input type="tel" class="form-control" placeholder="شماره تماس *" id="phone" required data-validation-required-message="Please enter your phone number.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <textarea class="form-control contactTextAread" placeholder="متن پیام *" id="message" required data-validation-required-message="Please enter a message."></textarea>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="col-lg-12 text-center">
+                                <div id="success"></div>
+                                <button type="submit" class="btn btn-xl">ارسال</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+    </section>
 
     <!-- Footer -->
     <footer>
@@ -342,7 +408,7 @@ $("#menu-toggle").click(function(e) {
 
 // Scrolls to the selected menu item on the page
 $(function() {
-    $('a[href*=#]:not([href=#])').click(function() {
+    $('a[href*=#]:not([href=#map]):not([href=#calendar])').click(function() {
         if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
 
             var target = $(this.hash);
