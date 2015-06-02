@@ -33,7 +33,72 @@
 <body>
     <!-- Navigation -->
     <div class="container" id="top">
-    	<a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
+    	<a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle">
+    		<i class="fa fa-bars"></i>
+    	</a>
+    	<div>
+			<img alt="Brand" src="<?php echo $view['assets']->getUrl('img/logo.png')?>" width=80 height=50 class="logo" />
+			<ul class="nav navbar-nav navbar-right">
+		        <li>
+		        	<p class="navbar-text">Already have an account or want to register?</p>
+	        	</li>
+		        <li class="dropdown">
+	          		<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          				<b>Login</b><span class="caret"></span>
+          			</a>
+					<ul id="login-dp" class="dropdown-menu">
+						<li>
+							<div class="row">
+								<div class="col-md-12">
+									 <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+										<div class="form-group">
+											<label class="sr-only" for="exampleInputEmail2">Email address</label>
+											<input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
+										</div>
+										<div class="form-group">
+											<label class="sr-only" for="exampleInputPassword2">Password</label>
+											<input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+		                                	<div class="help-block text-right">
+		                                		<a href="">Forget the password?</a>
+	                                		</div>
+										</div>
+										<div class="form-group">
+											<button type="submit" class="btn btn-primary btn-block">Sign in</button>
+										</div>
+										<div class="checkbox">
+											<label>
+												<input type="checkbox"> keep me logged-in
+											</label>
+										</div>
+									</form>
+								</div>
+								<div class="bottom text-center">
+									New here? <a href="#"><b>Join Us</b></a>
+								</div>
+							</div>
+						</li>
+					</ul>
+	        	</li>
+	    	</ul>
+			<span class="dropdown">
+  				<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+	  				Send Feedback
+  				</button>
+				<div class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+					<form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+					    <div class="form-group">
+					    	<a role="menuitem" tabindex="-1" href="#">Tag Me</a>
+				    	</div>
+	    				<div class="form-group">
+	    					<textarea rows="4" cols="50" placeholder="Your feedback is valuable for us ..."></textarea>
+    					</div>
+					    <div class="form-group">
+					    	<button type="submit" class="btn btn-info">Send</button>
+				    	</div>
+				    </form>
+			  	</div>
+			</span>
+    	</div>
 	    <nav id="sidebar-wrapper">
 	        <ul class="sidebar-nav">
 	            <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
@@ -60,10 +125,6 @@
 	            </li>
 	        </ul>
 	    </nav>
-	    <img alt="Brand" src="<?php echo $view['assets']->getUrl('img/logo.png')?>" width=100 height=60/>
-        	<button type="submit" class="btn btn-info">Sign In</button>
-	  		<button type="submit" class="btn btn-primary">Sign Up</button>
-	  		<button type="submit" class="btn btn-default">Send Feedback</button>
     </div>
 
     <!-- Header -->
@@ -151,11 +212,10 @@
 					<a href="#map" role="tab" aria-controls="map" data-toggle="pill">Map View</a>
 				</li>
 			</ul>
-		
 			<!-- Tab panes -->
 		  	<div class="tab-content">
 		  		<div role="tabpanel" class="tab-pane fade in active" id="calendar">
-		  			...........................................
+		  			<?php require('events.php');?>
 		  		</div>
 		    	<div role="tabpanel" class="tab-pane fade" id="map">
 		    		<iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" 
@@ -178,7 +238,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2>Started with nothing! Will achieve everything!</h2>
-                    <p class="lead">
+                    <p class="lead text-justify ">
 						Wondering why your events never be sold-out although you pay so much on advertisement?
 						Are you bored from work and want to have some fun with your friends but don’t know where to go?
 						Our goal in EventYab is to connect people throughout the world by helping them create their own events, advertise them or invite their friends over, find fun events of their interests at their neighbourhood, buy the best tickets with the best prices, and so many more. EventYab helps you create, advertise, invite, find, and attend events, very fast, very simple.
