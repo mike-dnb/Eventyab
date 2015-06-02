@@ -1,0 +1,5 @@
+[28-May-2015 06:54:16 UTC] PHP Fatal error:  Uncaught exception 'RuntimeException' with message 'Unable to use ApcClassLoader as APC is not enabled.' in /home/eventyab/public_html/app/bootstrap.php.cache:2733
+Stack trace:
+#0 /home/eventyab/public_html/web/app.php(13): Symfony\Component\ClassLoader\ApcClassLoader->__construct('ee02130fab968d5...', Object(Composer\Autoload\ClassLoader))
+#1 {main}
+  thrown in /home/eventyab/public_html/app/bootstrap.php.cache on line 2733
