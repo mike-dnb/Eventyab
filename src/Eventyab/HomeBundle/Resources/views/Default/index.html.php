@@ -1,3 +1,4 @@
+<?php use Eventyab\HomeBundle\Constants\HomeConstants; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,9 +13,10 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo $view['assets']->getUrl('css/bootstrap.min.css') ?>" rel="stylesheet">
-
+	<link href="<?php echo $view['assets']->getUrl('css/stylish-portfolio.css') ?>" rel="stylesheet">
+    
     <!-- Custom CSS -->
-    <link href="<?php echo $view['assets']->getUrl('css/stylish-portfolio.css') ?>" rel="stylesheet">
+    <link href="<?php echo $view['assets']->getUrl('css/mine.css') ?>" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="<?php echo $view['assets']->getUrl('font-awesome/css/font-awesome.min.css') ?>" rel="stylesheet" type="text/css">
@@ -30,42 +32,103 @@
 
 <body>
     <!-- Navigation -->
-    <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
-    <nav id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-            <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
-            <li class="sidebar-brand">
-                <a href="#top"  onclick = $("#menu-close").click(); >Eventyab Menu</a>
-            </li>
-            <li>
-                <a href="#top" onclick = $("#menu-close").click(); >Home</a>
-            </li>
-            <li>
-                <a href="#popular" onclick = $("#menu-close").click(); >Popular Events</a>
-            </li>
-            <li>
-                <a href="#events" onclick = $("#menu-close").click(); >Event Filtering</a>
-            </li>
-            <li>
-                <a href="#about" onclick = $("#menu-close").click(); >About Us</a>
-            </li>
-            <li>
-                <a href="#team" onclick = $("#menu-close").click(); >Our Team</a>
-            </li>
-            <li>
-                <a href="#contact" onclick = $("#menu-close").click(); >Contact Us</a>
-            </li>
-        </ul>
-    </nav>
+    <div class="container" id="top">
+    	<a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle">
+    		<i class="fa fa-bars"></i>
+    	</a>
+    	<div>
+			<img alt="Brand" src="<?php echo $view['assets']->getUrl('img/logo.png')?>" width=80 height=50 class="logo" />
+			<ul class="nav navbar-nav navbar-right">
+		        <li>
+		        	<p class="navbar-text">Already have an account or want to register?</p>
+	        	</li>
+		        <li class="dropdown">
+	          		<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          				<b>Login</b><span class="caret"></span>
+          			</a>
+					<ul id="login-dp" class="dropdown-menu">
+						<li>
+							<div class="row">
+								<div class="col-md-12">
+									 <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+										<div class="form-group">
+											<label class="sr-only" for="exampleInputEmail2">Email address</label>
+											<input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
+										</div>
+										<div class="form-group">
+											<label class="sr-only" for="exampleInputPassword2">Password</label>
+											<input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+		                                	<div class="help-block text-right">
+		                                		<a href="">Forget the password?</a>
+	                                		</div>
+										</div>
+										<div class="form-group">
+											<button type="submit" class="btn btn-primary btn-block">Sign in</button>
+										</div>
+										<div class="checkbox">
+											<label>
+												<input type="checkbox"> keep me logged-in
+											</label>
+										</div>
+									</form>
+								</div>
+								<div class="bottom text-center">
+									New here? <a href="#"><b>Join Us</b></a>
+								</div>
+							</div>
+						</li>
+					</ul>
+	        	</li>
+	    	</ul>
+			<span class="dropdown">
+  				<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+	  				Send Feedback
+  				</button>
+				<div class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+					<form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+					    <div class="form-group">
+					    	<a role="menuitem" tabindex="-1" href="#">Tag Me</a>
+				    	</div>
+	    				<div class="form-group">
+	    					<textarea rows="4" cols="50" placeholder="Your feedback is valuable for us ..."></textarea>
+    					</div>
+					    <div class="form-group">
+					    	<button type="submit" class="btn btn-info">Send</button>
+				    	</div>
+				    </form>
+			  	</div>
+			</span>
+    	</div>
+	    <nav id="sidebar-wrapper">
+	        <ul class="sidebar-nav">
+	            <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+	            <li class="sidebar-brand">
+	                <a href="#top"  onclick = $("#menu-close").click(); >Eventyab Menu</a>
+	            </li>
+	            <li>
+	                <a href="#top" onclick = $("#menu-close").click(); >Home</a>
+	            </li>
+	            <li>
+	                <a href="#popular" onclick = $("#menu-close").click(); >Popular Events</a>
+	            </li>
+	            <li>
+	                <a href="#events" onclick = $("#menu-close").click(); >Event Filtering</a>
+	            </li>
+	            <li>
+	                <a href="#about" onclick = $("#menu-close").click(); >About Us</a>
+	            </li>
+	            <li>
+	                <a href="#team" onclick = $("#menu-close").click(); >Our Team</a>
+	            </li>
+	            <li>
+	                <a href="#contact" onclick = $("#menu-close").click(); >Contact Us</a>
+	            </li>
+	        </ul>
+	    </nav>
+    </div>
 
-    <form class="navbar-form navbar-left" role="search">
-  <img alt="Brand" src="<?php echo $view['assets']->getUrl('img/logo.png')?>" width=100 height=60/>
-  <button type="submit" class="btn btn-default">Sign In</button>
-  <button type="submit" class="btn btn-default">Sign Up</button>
-  <button type="submit" class="btn btn-default">Send Feedback</button>
-</form>
     <!-- Header -->
-    <header id="top" class="header">
+    <header class="header">
         <div class="text-vertical-center">
             <h1>Eventyab</h1>
             <h3>Find events happening all around the world</h3>
@@ -149,11 +212,10 @@
 					<a href="#map" role="tab" aria-controls="map" data-toggle="pill">Map View</a>
 				</li>
 			</ul>
-		
 			<!-- Tab panes -->
 		  	<div class="tab-content">
 		  		<div role="tabpanel" class="tab-pane fade in active" id="calendar">
-		  			...........................................
+		  			<?php require('events.php');?>
 		  		</div>
 		    	<div role="tabpanel" class="tab-pane fade" id="map">
 		    		<iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" 
@@ -176,7 +238,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2>Started with nothing! Will achieve everything!</h2>
-                    <p class="lead">
+                    <p class="lead text-justify ">
 						Wondering why your events never be sold-out although you pay so much on advertisement?
 						Are you bored from work and want to have some fun with your friends but don’t know where to go?
 						Our goal in EventYab is to connect people throughout the world by helping them create their own events, advertise them or invite their friends over, find fun events of their interests at their neighbourhood, buy the best tickets with the best prices, and so many more. EventYab helps you create, advertise, invite, find, and attend events, very fast, very simple.
@@ -196,96 +258,20 @@
                     <h2>Our Team</h2>
                     <hr class="small">
                     <div class="row">
-                        <div class="col-md-2 col-sm-6 col-md-offset-1">
-                            <div class="service-item">
-                                <img src="<?php echo $view['assets']->getUrl('img/team/ms.jpg')?>" />
-                                <h4>
-                                    <p class="our-team-name">Mohammad Soroush</p>
-                                    <strong>Co-founder & role</strong>
-                                </h4>
-                                <p class="text-left text-justify">
-	                                Mohammad received his PhD and MEng in Petroleum Engineering from the University of Calgary. 
-	                                As a highly motivated, energetic, and well-organized petroleum engineer, he has succeeded in 
-	                                several leadership and mentorship professional activities. Mohammad is co-founder of Iranian 
-	                                Graduate Student Association (IGSA). His voluntary activities have been started in IGSA as 
-	                                event manager and VP-communication and continued in many social events inside and outside the university.
-                                </p>
-                                <a href="https://www.linkedin.com" class="btn btn-light">Learn More</a>
-                            </div>
-                        </div>
-                        <div class="col-md-2 col-sm-6">
-                            <div class="service-item">
-                            	<img src="<?php echo $view['assets']->getUrl('img/team/mr.jpg')?>" />
-                                <h4>
-                                    <p class="our-team-name">Mohammadreza Rahimi</p>
-                                    <strong>Co-founder & role</strong>
-                                </h4>
-                                <p class="text-left text-justify">
-                                	Mohammadreza received his M.Sc. in Geomatics Engineering from the University of Calgary, for developing 
-                                	location recommendation systems for social networking services. Prior to that, he received a bachelor's 
-                                	degree in Software Engineering from Sharif University of Technology in Iran. Mohammadreza is currently 
-                                	the president of Iranian Graduate Students’ Association at the University of Calgary. Serving at this 
-                                	position and as a volunteer in other positions, he has developed a large set of leadership skills which 
-                                	he aims to commercializing them at Eventyab. He is currently a PhD student at the University of Calgary 
-                                	and a web developer at Eventyab.</p>
-                                <a href="https://www.linkedin.com" class="btn btn-light">Learn More</a>
-                            </div>
-                        </div>
-                        <div class="col-md-2 col-sm-6">
-                            <div class="service-item">
-								<img src="<?php echo $view['assets']->getUrl('img/team/ma.jpg')?>" />
-                            	<h4>
-                                    <p class="our-team-name">Mohammad Hadi Aghahassani</p>
-                                    <strong>Co-founder & role</strong>
-                                </h4>
-                                <p class="text-left text-justify">
-                                	Hadi is originally from Iran. He moved to Calgary in 2011 to obtain his Master's degree in structural 
-                                	engineering from the University of Calgary. Now he is working as a structural engineer with a consulting 
-                                	firm in Calgary, where he applies his academic background in building industry. Hadi enjoys volunteering 
-                                	for non-profit and charity organizations and loves to make new friends. He enjoys volleyball, swimming and 
-                                	spending time with his lovely wife and awesome friends.
-                                </p>
-                                <a href="https://www.linkedin.com" class="btn btn-light">Learn More</a>
-                            </div>
-                        </div>
-                        <div class="col-md-2 col-sm-6">
-                            <div class="service-item">
-                            	<img src="<?php echo $view['assets']->getUrl('img/team/mj.jpg')?>" />
-                                <h4>
-                                    <p class="our-team-name">Mohammad Ali Jazayeri</p>
-                                    <strong>Co-founder & role</strong>
-                                </h4>
-                                <p class="text-left text-justify">
-	                                Mohammad Ali received his MSc in Geomatics Engineering from the University of Calgary, where he belongs to. 
-	                                During his Masters, Mohammad has done many voluntary activities in a spread spectrum of event advertisement 
-	                                and event organizer to presidency of a governmental association. As he's a sociable person, he loves to do 
-	                                gathering with his friends in all social events. To simplify this process, he started developing a web 
-	                                application benefiting all people across the world. Having an optimistic attitude, he believes in success for 
-	                                the future of this application.
-                                </p>
-                                <a href="https://www.linkedin.com/in/mojazayeri" class="btn btn-light">Learn More</a>
-                            </div>
-                        </div>
-                        <div class="col-md-2 col-sm-6">
-                            <div class="service-item">
-                            	<img src="<?php echo $view['assets']->getUrl('img/team/mm.jpg')?>" />
-                                <h4>
-                                    <p class="our-team-name">Mohammad Moravvej</p>
-                                    <strong>Co-founder & role</strong>
-                                </h4>
-                                <p class="text-left text-justify">
-                          			Mohammad, so called Morooj or MHMH, loves spending time with friends and having fun activities with them, 
-                          			no matter it is a daily gathering over a coffee or a big celebration like Nowruz! Morooj met Mohammad Ali 
-                          			(Shahram), Mamrooz, and Soroush when studying his MSc at the University of Calgary, whilst already knew Hadi 
-                          			from memorable undergrad years at the Sharif University of Technology. MHMH have been doing volunteer works 
-                          			since he entered Sharif University and he has never gave up on that until now. Head of Research and Education, 
-                          			VP-Events, and VP-Treasury of different groups and organizations in Iran and in Canada are some of the examples 
-                          			of his leadership experience. Mohammad is currently pursuing his PhD at the University of Calgary and cooperates 
-                          			with Civil Engineering Graduate Society (CEGS) as the VP-Events.
-                                </p>
-                                <a href="https://www.linkedin.com" class="btn btn-light">Learn More</a>
-                            </div>
-                        </div>
+                    <?php for($i = 0; $i < sizeof(HomeConstants::$team_name); $i++) {
+                    		$extraClass = ($i == 0) ? 'col-md-offset-1':'';
+                    		echo '<div class="col-md-2 col-sm-6 '.$extraClass.'">
+									<div class="service-item">
+										<img src="'.$view['assets']->getUrl(HomeConstants::$team_image[$i]).'" />
+										<h4>
+    	                                	<p class="our-team-name">'.HomeConstants::$team_name[$i].'</p>
+        	                            	<strong>'.HomeConstants::$team_role[$i].'</strong>
+            	                    	</h4>
+                	                	<p class="text-left text-justify">'.HomeConstants::$team_bio[$i].'</p>
+                    	            	<a href="'.HomeConstants::$team_linkedin[$i].'" class="btn btn-light">Learn More</a>
+                        			</div>    
+                        		</div>';
+                    		}?>
                     </div>
                     <!-- /.row (nested) -->
                 </div>
@@ -303,12 +289,14 @@
         </div>
     </aside>
     
+    <!-- Contact Section -->
     <section id="contact">
+        <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Contact Us</h2>
                     <h3 class="section-subheading text-muted">
-                    	Feel free to email us to provide some feedback on our website, give us suggestions, or to just say hello!
+                    	Get in touch and let us know what you think, or just say hello!
                     </h3>
                 </div>
             </div>
@@ -318,33 +306,34 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="نام یا نام خانوادگی *" id="name" required data-validation-required-message="Please enter your name.">
+                                    <input type="text" class="form-control" placeholder="Your Name *" id="name" required data-validation-required-message="Please enter your name.">
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="آدرس ایمیل *" id="email" required data-validation-required-message="Please enter your email address.">
+                                    <input type="email" class="form-control" placeholder="Your Email *" id="email" required data-validation-required-message="Please enter your email address.">
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="form-group">
-                                    <input type="tel" class="form-control" placeholder="شماره تماس *" id="phone" required data-validation-required-message="Please enter your phone number.">
+                                    <input type="tel" class="form-control" placeholder="Your Phone *" id="phone" required data-validation-required-message="Please enter your phone number.">
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <textarea class="form-control contactTextAread" placeholder="متن پیام *" id="message" required data-validation-required-message="Please enter a message."></textarea>
+                                    <textarea class="form-control" placeholder="Your Message *" id="message" required data-validation-required-message="Please enter a message."></textarea>
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="clearfix"></div>
                             <div class="col-lg-12 text-center">
                                 <div id="success"></div>
-                                <button type="submit" class="btn btn-xl">ارسال</button>
+                                <button type="submit" class="btn btn-xl">Send Message</button>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
+        </div>
     </section>
 
     <!-- Footer -->
